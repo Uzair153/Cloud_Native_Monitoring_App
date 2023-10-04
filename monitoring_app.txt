@@ -1,0 +1,38 @@
+apt install git python3 docker.io curl -y
+apt install apt install python3-pip
+ pip install --upgrade pip
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+kubectl version --short
+
+
+mkdir app && cd app
+
+git clone <repo link>
+
+pip install psutil
+pip install -r requirments
+
+python3 app.py
+-------------------------------------
+Now create a docker image for app
+
+docker build -t my-flask-app .
+
+docker run -p 5000:5000 <img id>
+
+check on port 5000
+-------------------------------------
+apt install awscli
+aws config
+
+
+write a boto module for aws ecr .
+run commands on your local machines to push image to ecr.
+----------------------------------
+
+Now create a aws eks cluster and wait for there creation .
+
+
